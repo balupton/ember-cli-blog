@@ -1,8 +1,8 @@
 {{#if isEditing}}
-  {{partial 'post-edit'}}
-  <button {{action 'doneEditing'}}>Done</button>
+	{{partial 'post-edit'}}
+	<button {{action 'doneEditing'}}>Done</button>
 {{else}}
-  <button {{action 'edit'}}>Edit</button>
+	<button {{action 'edit'}}>Edit</button>
 {{/if}}
 
 <h1>{{title}}</h1>
@@ -11,9 +11,9 @@
 <hr>
 
 <div class='intro'>
-  {{format-markdown excerpt}}
+	{{format-markdown excerpt}}
 </div>
 
 <div class='below-the-fold'>
-  {{format-markdown body}}
+	{{format-markdown body}}
 </div>

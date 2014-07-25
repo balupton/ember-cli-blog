@@ -1,19 +1,25 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-3">
-      <table class='table'>
-        <thead>
-          <tr><th>Recent Posts</th></tr>
-        </thead>
-        {{#each model}}
-        <tr><td>
-            {{#link-to 'post' this}}{{title}} <small class='muted'>by {{author}}</small>{{/link-to}}
-        </td></tr>
-        {{/each}}
-      </table>
-    </div>
-    <div class="col-xs-9">
-      {{outlet}}
-    </div>
-  </div>
+	<div class="row">
+
+		<!-- blog post listing -->
+		<div class="col-xs-3">
+			<table class='table'>
+				<thead>
+					<tr><th>Recent Posts</th></tr>
+				</thead>
+				{{#each model}}
+				<tr><td>
+					{{#link-to 'post' this}}
+						{{title}} <small class='muted'>by {{author}}</small>
+					{{/link-to}}
+				</td></tr>
+				{{/each}}
+			</table>
+		</div>
+
+		<!-- blog post content -->
+		<div class="col-xs-9">
+			{{outlet}}
+		</div>
+	</div>
 </div>

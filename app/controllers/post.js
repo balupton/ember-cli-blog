@@ -1,13 +1,13 @@
 import Ember from "ember";
 export default Ember.ObjectController.extend({
-  isEditing: false,
+	isEditing: false,
 
-  edit: function() {
-    this.set('isEditing', true);
-  },
+	edit: function() {
+		this.set('isEditing', true);
+	},
 
-  doneEditing: function() {
-    this.set('isEditing', false);
-    // this.store.commit();
-  }
+	doneEditing: function() {
+		this.set('isEditing', false);
+		// this.store.commit();
+	}
 });
