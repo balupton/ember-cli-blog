@@ -8,6 +8,7 @@ app.import('vendor/showdown/compressed/showdown.js');
 app.import('vendor/showdown/compressed/extensions/github.js');
 app.import('vendor/moment/moment.js');
 app.import('vendor/bootstrap/dist/css/bootstrap.css');
+app.import('vendor/ember-json-api/dist/json_api_adapter.js');
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
