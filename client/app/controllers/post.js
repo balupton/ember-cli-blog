@@ -9,7 +9,7 @@ export default Ember.ObjectController.extend({
 
 		doneEditing: function() {
 			this.set('isEditing', false);
-			// this.store.commit();
+			this.get('model').save();
 		}
 	}
 });
