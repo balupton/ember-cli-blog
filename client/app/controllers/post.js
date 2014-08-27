@@ -10,6 +10,12 @@ export default Ember.ObjectController.extend({
 		doneEditing: function() {
 			this.set('isEditing', false);
 			this.get('model').save();
-		}
+		},
+		
+		deletePost: function() {
+      this.get('model').destroyRecord().then(function() {
+        this.get('target').transitionTo('posts');
+      }.bind(this));
+    }
 	}
 });
