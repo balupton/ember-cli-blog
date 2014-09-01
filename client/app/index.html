@@ -13,13 +13,11 @@
 		<link rel="stylesheet" href="assets/myapp.css">
 	</head>
 	<body>
-		<script>
-			window.MyappENV = {{ENV}};
-			window.EmberENV = window.MyappENV.EmberENV;
-		</script>
 		<script src="assets/vendor.js"></script>
 		<script src="assets/myapp.js"></script>
 		<script>
+      window.MyappENV = require('myapp/config/environment')['default'];
+      window.EmberENV = window.MyappENV.EmberENV;		
 			window.Myapp = require('myapp/app')['default'].create(MyappENV.APP);
 		</script>
 	</body>
