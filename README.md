@@ -5,10 +5,10 @@ This README outlines the details of collaborating on this Ember application.
 ## Installation
 
 * `git clone` this repository
-* `cd client`
+* `cd ember-cli-blog/client`
 * `npm install`
 * `bower install`
-* `cd server`
+* `cd ../server`
 * `npm install fortune`
 
 ## Running
