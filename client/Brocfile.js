@@ -4,11 +4,11 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
-app.import('vendor/showdown/compressed/showdown.js');
-app.import('vendor/showdown/compressed/extensions/github.js');
-app.import('vendor/moment/moment.js');
-app.import('vendor/bootstrap/dist/css/bootstrap.css');
-app.import('vendor/ember-json-api/dist/json_api_adapter.js');
+app.import('bower_components/showdown/compressed/showdown.js');
+app.import('bower_components/showdown/compressed/extensions/github.js');
+app.import('bower_components/moment/moment.js');
+app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+app.import('bower_components/ember-json-api/dist/json_api_adapter.js');
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
