@@ -4,8 +4,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
-app.import('bower_components/showdown/compressed/showdown.js');
-app.import('bower_components/showdown/compressed/extensions/github.js');
+app.import('bower_components/marked/lib/marked.js');
 app.import('bower_components/moment/moment.js');
 app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 app.import('bower_components/ember-json-api/dist/json_api_adapter.js');

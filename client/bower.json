@@ -14,7 +14,7 @@
     "ember-cli-test-loader": "rwjblue/ember-cli-test-loader#0.0.4",
     "ember-json-api": "daliwali/ember-json-api",
     "moment": "~2.7.0",
-    "showdown": "~0.3.1",
+    "marked": "~0.3.2",
     "bootstrap": "~3.2.0"
   }
 }
