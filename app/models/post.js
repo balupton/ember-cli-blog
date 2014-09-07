@@ -5,7 +5,8 @@ var Post = DS.Model.extend({
 	author: DS.attr('string', {defaultValue: ""}),
 	date: DS.attr('date'),
 	excerpt: DS.attr('string', {defaultValue: ""}),
-	body: DS.attr('string', {defaultValue: ""})
+	body: DS.attr('string', {defaultValue: ""}),
+	rev: DS.attr('string')
 });
 
 export default Post;

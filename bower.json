@@ -12,7 +12,7 @@
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.2",
     "ember-qunit-notifications": "0.0.4",
     "ember-cli-test-loader": "rwjblue/ember-cli-test-loader#0.0.4",
-    "ember-json-api": "daliwali/ember-json-api",
+    "ember-pouch": "~0.1.6",
     "moment": "~2.7.0",
     "marked": "~0.3.2",
     "bootstrap": "~3.2.0"

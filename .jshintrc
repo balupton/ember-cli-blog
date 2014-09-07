@@ -3,6 +3,8 @@
     "document": true,
     "window": true,
     "MyappENV": true,
+    "PouchDB": true,
+    "EmberPouch": true,
     "marked": true,
     "moment": true
   },

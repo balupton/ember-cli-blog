@@ -5,16 +5,11 @@ This README outlines the details of collaborating on this Ember application.
 ## Installation
 
 * `git clone` this repository
-* `cd ember-cli-blog/client`
+* `cd ember-cli-blog`
 * `npm install`
 * `bower install`
-* `cd ../server`
-* `npm install fortune`
 
 ## Running
-* `cd server`
-* `node server.js`
-* `cd client`
 * `ember server`
 * Visit your app at http://localhost:4200.
 
