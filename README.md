@@ -8,6 +8,9 @@ This README outlines the details of collaborating on this Ember application.
 * `cd ember-cli-blog`
 * `npm install`
 * `bower install`
+* `install couchDB from http://couchdb.apache.org/`
+* `npm install -g add-cors-to-couchdb`
+* `add-cors-to-couchdb`
 
 ## Running
 * `ember server`
