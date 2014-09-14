@@ -10,7 +10,6 @@ export default Ember.Route.extend({
       since: 'now',
       live: true
     }).on('change', function () {
-      debugger;
       recordArray.update();
     });
   }
