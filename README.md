@@ -2,6 +2,17 @@
 
 This README outlines the details of collaborating on this Ember application.
 
+## Working example
+
+[http://exmer.com/bloggrcouch/](http://exmer.com/bloggrcouch/)
+
+## Prerequisites
+
+You will need the following things properly installed on your computer.
+
+* [Git](http://git-scm.com/)
+* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+
 ## Installation
 
 * `git clone` this repository
@@ -25,4 +36,4 @@ This README outlines the details of collaborating on this Ember application.
 
 * `ember build`
 
-For more information on using ember-cli, visit [http://iamstef.net/ember-cli/](http://iamstef.net/ember-cli/).
+For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
