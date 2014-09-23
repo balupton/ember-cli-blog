@@ -40,7 +40,7 @@ module.exports = function(environment) {
   }
 
 	if (environment === 'production') {
-     ENV.baseURL = '/bloggrcouch/';
+    ENV.baseURL = '/bloggrcouch/';
 	}
 
 	return ENV;
