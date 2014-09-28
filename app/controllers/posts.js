@@ -10,5 +10,5 @@ export default Ember.ArrayController.extend({
       this.get('target').transitionTo('post', newPost.save());
     }
   },
-  sortProperties: ['date'],
+  sortProperties: ['date']
 });
