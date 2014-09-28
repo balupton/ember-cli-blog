@@ -1,6 +1,6 @@
 import Ember from "ember";
 
-export default Ember.ObjectController.extend({
+export default Ember.ArrayController.extend({
   actions: {
     createPost: function() {
       this.controllerFor('post').send('edit');
@@ -9,5 +9,6 @@ export default Ember.ObjectController.extend({
       newPost.set('author' , 'C.L.I. Ember');
       this.get('target').transitionTo('post', newPost.save());
     }
-  }
+  },
+  sortProperties: ['date'],
 });
