@@ -34,6 +34,14 @@ You will need the following things properly installed on your computer.
 
 ## Building
 
-* `ember build`
+* `ember build` (development)
+* `ember build --environment production` (production)
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+## Further Reading / Useful Links
+
+* ember: [http://emberjs.com/](http://emberjs.com/)
+* ember-cli: [http://www.ember-cli.com/](http://www.ember-cli.com/)
+* Development Browser Extensions
+  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+

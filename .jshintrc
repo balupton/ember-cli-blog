@@ -6,7 +6,8 @@
     "PouchDB": true,
     "EmberPouch": true,
     "marked": true,
-    "moment": true
+    "moment": true,
+    "-Promise": true
   },
   "browser" : true,
   "boss" : true,
