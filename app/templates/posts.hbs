@@ -8,7 +8,7 @@
 					<tr><th>Recent Posts</th></tr>
 				</thead>
 				<tbody>
-				{{#each}}
+				{{#each pagedContent}}
 				<tr><td>
 					{{#link-to 'post' this}}
 						{{title}} <small class='muted'>by {{author}}</small>
@@ -17,6 +17,7 @@
 				{{/each}}
 				</tbody>
 			</table>
+			{{page-numbers content=pagedContent}}
 		</div>
 
 		<!-- blog post content -->
