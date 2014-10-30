@@ -5,11 +5,12 @@ export default Ember.ArrayController.extend({
   sortProperties: ['date'],
   sortAscending: false,
   
+  page: 1,
+  perPage: 5,
+
+  pagedContent: pagedArray("arrangedContent", {pageBinding: "page", perPageBinding: "perPage"}),
+
   queryParams: ["page", "perPage"],
-  
-  pagedContent: pagedArray('arrangedContent', {perPage: 5}),
-  
-  pageBinding: "pagedContent.page",
-  perPageBinding: "pagedContent.perPage",
+
   totalPagesBinding: "pagedContent.totalPages"
 });
