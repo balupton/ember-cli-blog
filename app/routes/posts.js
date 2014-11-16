@@ -11,8 +11,15 @@ export default Ember.Route.extend({
     new PouchDB('bloggr').changes({
       since: 'now',
       live: true
-    }).on('change', function () {
+    }).on('change', function (change) {
       recordArray.update();
+      if (change.deleted) {
+	      var underscore = change.id.indexOf('_'),
+	          docType = change.id.substring(0, underscore),
+	          docId = change.id.substring(change.id.indexOf('_', underscore + 1) + 1);
+        var rec = recordArray.store.recordForId(docType, docId);
+        recordArray.removeRecord(rec);
+      }
     });
   },
   
