@@ -5,23 +5,45 @@ export default Ember.Route.extend({
 		return this.get('store').find('post');
 	},
 	
+  // afterModel: function (recordArray) {
+    // // This tells PouchDB to listen for live changes and
+    // // notify Ember Data when a change comes in.
+    // new PouchDB('bloggr').changes({
+      // since: 'now',
+      // live: true
+    // }).on('change', function (change) {
+      // recordArray.update();
+      // if (change.deleted) {
+	      // var underscore = change.id.indexOf('_'),
+	          // docType = change.id.substring(0, underscore),
+	          // docId = change.id.substring(change.id.indexOf('_', underscore + 1) + 1);
+        // var rec = recordArray.store.recordForId(docType, docId);
+        // recordArray.removeRecord(rec);
+      // }
+    // });
+  // },
+  
   afterModel: function (recordArray) {
     // This tells PouchDB to listen for live changes and
     // notify Ember Data when a change comes in.
-    new PouchDB('bloggr').changes({
-      since: 'now',
+    var db = new PouchDB('bloggr');
+    db.setSchema([]);
+    db.changes({
+      since: 'now', 
       live: true
     }).on('change', function (change) {
+      // notify Ember of changed/added items
       recordArray.update();
+      // notify Ember of deleted items
       if (change.deleted) {
-	      var underscore = change.id.indexOf('_'),
-	          docType = change.id.substring(0, underscore),
-	          docId = change.id.substring(change.id.indexOf('_', underscore + 1) + 1);
-        var rec = recordArray.store.recordForId(docType, docId);
+        var obj = db.rel.parseDocID(change.id);
+        var rec = recordArray.store.recordForId(obj.type, obj.id);
         recordArray.removeRecord(rec);
       }
     });
   },
+  
+  
   
   actions: {
 	  edit: function() {

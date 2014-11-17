@@ -13,7 +13,7 @@
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
-    "ember-pouch": "~0.1.6",
+    "ember-pouch": "~1.1.0",
     "moment": "~2.7.0",
     "marked": "~0.3.2",
     "bootstrap": "~3.2.0"
