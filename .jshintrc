@@ -1,15 +1,15 @@
 {
-  "predef": {
-    "document": true,
-    "window": true,
-    "PouchDB": true,
-    "EmberPouch": true,
-    "marked": true,
-    "moment": true,
-    "-Promise": true
-  },
-  "browser" : true,
-  "boss" : true,
+  "predef": [
+    "document",
+    "window",
+    "PouchDB",
+    "EmberPouch",
+    "marked",
+    "moment",
+    "-Promise"
+  ],
+  "browser": true,
+  "boss": true,
   "curly": true,
   "debug": false,
   "devel": true,
