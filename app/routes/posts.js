@@ -5,26 +5,6 @@ export default Ember.Route.extend({
 		return this.get('store').find('post');
 	},
 	
-  afterModel: function (recordArray) {
-    // This tells PouchDB to listen for live changes and
-    // notify Ember Data when a change comes in.
-    var db = new PouchDB('bloggr');
-    db.setSchema([]);
-    db.changes({
-      since: 'now', 
-      live: true
-    }).on('change', function (change) {
-      // notify Ember of changed/added items
-      recordArray.update();
-      // notify Ember of deleted items
-      if (change.deleted) {
-        var obj = db.rel.parseDocID(change.id);
-        var rec = recordArray.store.recordForId(obj.type, obj.id);
-        recordArray.removeRecord(rec);
-      }
-    });
-  },
-
   actions: {
 	  edit: function() {
 			this.controllerFor('post').set('isEditing', true);
