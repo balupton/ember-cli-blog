@@ -25,8 +25,12 @@ You will need the following things properly installed on your computer.
 * install couchDB from http://couchdb.apache.org/
 * `npm install -g add-cors-to-couchdb`
 * `add-cors-to-couchdb`
+* update `config/environment.js` `local_couchdb_instance` and `online_couchdb_instance` to your CouchDB
+  instance name.
+* update `config/environment.js` `ENV.baseURL` in the production environment
 
 ## Running
+
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
