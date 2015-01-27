@@ -40,17 +40,16 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  
   ENV.remote_couch: 'http://localhost:5984/bloggr';
-  ENV.contentSecurityPolicy: {
-    'connect-src': "'self' http://localhost:5984 http://0.0.0.0:5984"
-  };
 
   if (environment === 'production') {
     ENV.baseURL = '/bloggrcouch/';
     ENV.remote_couch = 'http://martinic.iriscouch.com:5984/bloggr';
-    ENV.contentSecurityPolicy = {
-      'connect-src': "'self' http://martinic.iriscouch.com:5984"
-    };
   }
+  ENV.contentSecurityPolicy = {
+    'connect-src': "'self' " + ENV.remote_couch.substring(0, ENV.remote_couch.indexOf('/', 9))
+  };
+
   return ENV;
 };
