@@ -6,11 +6,6 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    local_couchdb_instance: 'bloggr',
-    online_couchdb_instance: 'http://localhost:5984/bloggr',
-    contentSecurityPolicy: {
-      'connect-src': "'self' http://localhost:5984 http://0.0.0.0:5984"
-    },
 
     EmberENV: {
       FEATURES: {
@@ -45,9 +40,14 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-	if (environment === 'production') {
-	  ENV.baseURL = '/bloggrcouch/';
-	  ENV.online_couchdb_instance = 'http://martinic.iriscouch.com:5984/bloggr';
+  ENV.remote_couch: 'http://localhost:5984/bloggr';
+  ENV.contentSecurityPolicy: {
+    'connect-src': "'self' http://localhost:5984 http://0.0.0.0:5984"
+  };
+
+  if (environment === 'production') {
+    ENV.baseURL = '/bloggrcouch/';
+    ENV.remote_couch = 'http://martinic.iriscouch.com:5984/bloggr';
     ENV.contentSecurityPolicy = {
       'connect-src': "'self' http://martinic.iriscouch.com:5984"
     };
