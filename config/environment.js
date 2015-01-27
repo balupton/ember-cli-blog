@@ -41,8 +41,8 @@ module.exports = function(environment) {
   }
 
   
-  ENV.remote_couch: 'http://localhost:5984/bloggr';
-
+  ENV.remote_couch = 'http://localhost:5984/bloggr';
+  ENV.local_couch = 'bloggr';
   if (environment === 'production') {
     ENV.baseURL = '/bloggrcouch/';
     ENV.remote_couch = 'http://martinic.iriscouch.com:5984/bloggr';
