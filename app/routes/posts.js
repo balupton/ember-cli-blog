@@ -4,6 +4,17 @@ export default Ember.Route.extend({
 	model: function() {
 		return this.get('store').find('post');
 	},
+
+  afterModel: function() {
+    var me = this;
+    var authorsPromise = this.store.find('author');
+
+    authorsPromise.then(function(authors) {
+      me.controllerFor('posts').set('allAuthors',authors);
+    });
+
+    return authorsPromise;
+  },
 	
   actions: {
 	  edit: function() {
