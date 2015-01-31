@@ -11,6 +11,7 @@ export default Ember.ObjectController.extend({
       content.push(selected);    
     }
 
+    // we can access allAuthors on the posts controller thanks to the needs declaration above
     this.get('controllers.posts.allAuthors').forEach(function(listAuthorObj) {
       var listName = listAuthorObj.get('name');
       if (selected !== listName) {

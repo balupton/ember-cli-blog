@@ -10,6 +10,8 @@ export default Ember.Route.extend({
     var authorsPromise = this.store.find('author');
 
     authorsPromise.then(function(authors) {
+      // can't set on post controller at this point because post controller doesn't exist yet
+      // could also do this in post route afterModel and put it on post controller if we wanted
       me.controllerFor('posts').set('allAuthors',authors);
     });
 
