@@ -15,6 +15,7 @@ export default Ember.Route.extend({
       me.controllerFor('posts').set('allAuthors',authors);
     });
 
+    // returning the promise tells the route to wait until it is resolved before continuing
     return authorsPromise;
   },
 	
