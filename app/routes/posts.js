@@ -4,6 +4,20 @@ export default Ember.Route.extend({
 	model: function() {
 		return this.get('store').find('post');
 	},
+
+  afterModel: function() {
+    var me = this;
+    var authorsPromise = this.store.find('author');
+
+    authorsPromise.then(function(authors) {
+      // can't set on post controller at this point because post controller doesn't exist yet
+      // could also do this in post route afterModel and put it on post controller if we wanted
+      me.controllerFor('posts').set('allAuthors',authors);
+    });
+
+    // returning the promise tells the route to wait until it is resolved before continuing
+    return authorsPromise;
+  },
 	
   actions: {
 	  edit: function() {
