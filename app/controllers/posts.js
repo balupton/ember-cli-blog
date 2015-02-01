@@ -18,10 +18,10 @@ export default Ember.ArrayController.extend({
     if (this.get('query')) {
       return this.get('arrangedContent').filter(function(item) {
         var query = this.get('query').toLowerCase(),
-            name = (item.get('title') || '').toLowerCase(),
-            desc = (item.get('body') || '').toLowerCase();
+            title = (item.get('title') || '').toLowerCase(),
+            body = (item.get('body') || '').toLowerCase();
 
-        return name.match(query) || desc.match(query);
+        return title.match(query) || body.match(query);
       }.bind(this));
     }
     return this.get('arrangedContent');
