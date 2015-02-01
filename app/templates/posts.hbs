@@ -1,5 +1,7 @@
 <div class="container-fluid">
-  <button {{action 'createPost'}}>Create</button>
+  <p><button {{action 'createPost'}}>Create</button></p>
+  <p>{{input type="text" value=query placeholder="Filter Posts" autofocus="autofocus"}}</p>
+  
 	<div class="row">
 	  <!-- blog post listing -->
 		<div class="col-xs-3">
