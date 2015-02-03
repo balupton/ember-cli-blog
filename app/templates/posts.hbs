@@ -10,10 +10,10 @@
 					<tr><th>Recent Posts</th></tr>
 				</thead>
 				<tbody>
-				{{#each item in pagedContent}}
+				{{#each post in pagedContent}}
 				<tr><td>
-					{{#link-to 'post' item}}
-						{{item.title}} <small class='muted'>by {{item.author}}</small>
+					{{#link-to 'post' post}}
+						{{post.title}} <small class='muted'>by {{post.author}}</small>
 					{{/link-to}}
 				</td></tr>
 				{{/each}}
