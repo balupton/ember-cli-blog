@@ -14,7 +14,7 @@
     "ember-qunit-notifications": "0.0.5",
     "qunit": "~1.17.1",
     "ember-pouch": "~1.1.6",
-    "moment": "~2.7.0",
+    "moment": "~2.9.0",
     "marked": "~0.3.2",
     "bootstrap": "~3.2.0"
   }
