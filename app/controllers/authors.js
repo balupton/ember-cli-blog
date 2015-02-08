@@ -3,7 +3,7 @@ import pagedArray from 'ember-cli-pagination/computed/paged-array';
 
 export default Ember.ArrayController.extend({
   sortProperties: ['name'],
-  sortAscending: false,
+  sortAscending: true,
   
   page: 1,
   perPage: 5,
