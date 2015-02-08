@@ -1,10 +1,8 @@
 <div class="container-fluid">
-  <p><button {{action 'createPost'}}>Create</button></p>
-  <p>{{input type="text" value=query placeholder="Filter Posts" autofocus="autofocus"}}</p>
-  
 	<div class="row">
 	  <!-- blog post listing -->
-		<div class="col-xs-3">
+		<div class="col-xs-4">
+		  <button {{action 'createPost'}}>Create</button> {{input type="text" value=query placeholder="Filter Posts" autofocus="autofocus"}}
 			<table class='table'>
 				<thead>
 					<tr><th>Recent Posts</th></tr>
@@ -22,7 +20,7 @@
 		</div>
 
 		<!-- blog post content -->
-		<div class="col-xs-9">
+		<div class="col-xs-8">
 			{{outlet}}
 		</div>
 	</div>
