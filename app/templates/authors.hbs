@@ -8,7 +8,7 @@
 					<tr><th>Authors</th></tr>
 				</thead>
 				<tbody>
-				{{#each author in pagedContent}}
+				{{#each pagedContent as |author|}}
 				<tr><td>
 					{{#link-to 'author' author}}
 						&bull; {{author.name}}
