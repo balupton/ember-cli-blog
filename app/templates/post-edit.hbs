@@ -1,6 +1,6 @@
-<p>{{input type="text" value=title}}</p>
-<p>{{view "select" content=authorlist value=author}}</p>
-<p>{{input type="text" value=excerpt}}</p>
-<p>{{textarea value=body}}</p>
+<p>{{input type="text" value=model.title}}</p>
+<p>{{view "select" content=authorlist value=model.author}}</p>
+<p>{{input type="text" value=model.excerpt}}</p>
+<p>{{textarea value=model.body}}</p>
 
 <p><button {{action 'deletePost'}}>Delete</button></p>
