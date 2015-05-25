@@ -1,8 +1,8 @@
 import DS from "ember-data";
+import { Model } from 'ember-pouch';
 
-var Author = DS.Model.extend({
-	name: DS.attr('string', {defaultValue: ""}),
-	rev: DS.attr('string')
+var Author = Model.extend({
+	name: DS.attr('string', {defaultValue: ""})
 });
 
 export default Author;
