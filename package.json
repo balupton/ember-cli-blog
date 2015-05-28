@@ -34,6 +34,6 @@
     "ember-data": "1.0.0-beta.17",
     "ember-disable-proxy-controllers": "^0.7.0",
     "ember-export-application-global": "^1.0.2",
-    "ember-pouch": "git://github.com/nolanlawson/ember-pouch.git#ddf1eac47433606804bac05a7144468afd8aaecf"
+    "ember-pouch": "^2.0.0"
   }
 }
