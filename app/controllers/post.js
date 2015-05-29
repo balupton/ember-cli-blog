@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
 	isEditing: false,
 
   authorlist: function() {
-    var selected = this.get('author'); // author from post model    
+    var selected = this.get('model.author'); // author from post model    
     var content = [];    
     if (selected !== null) {    
       content.push(selected);    
@@ -20,5 +20,5 @@ export default Ember.Controller.extend({
     });
 
     return content;
-  }.property("author")
+  }.property("model.author")
 });
