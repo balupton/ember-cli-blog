@@ -19,6 +19,6 @@ export default Ember.Controller.extend({
       }
     });
 
-    return content;
+    return content.sort();
   }.property("model.author")
 });
