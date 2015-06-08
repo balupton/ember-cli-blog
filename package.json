@@ -31,7 +31,7 @@
     "ember-cli-pagination": "^0.6.6",
     "ember-cli-qunit": "0.3.13",
     "ember-cli-uglify": "^1.0.1",
-    "ember-data": "1.0.0-beta.18",
+    "ember-data": "1.0.0-beta.19",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
     "ember-pouch": "git://github.com/broerse/ember-pouch.git#158209f15c7ef8e8f4a72ee8c090640dc46b3c21"
