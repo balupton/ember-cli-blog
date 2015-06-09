@@ -2,7 +2,7 @@ import Ember from "ember";
 
 export default Ember.Route.extend({
 	model: function() {
-		return this.get('store').find('post');
+		return this.store.find('post');
 	},
 
   afterModel: function() {
@@ -37,7 +37,7 @@ export default Ember.Route.extend({
 
     createPost: function() {
       this.send('edit');
-      var newPost = this.get('store').createRecord('post');
+      var newPost = this.store.createRecord('post');
       newPost.set('date' , new Date());
       newPost.set('author' , 'C.L.I. Ember');
       this.transitionTo('post', newPost.save());

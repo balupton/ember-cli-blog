@@ -2,7 +2,7 @@ import Ember from "ember";
 
 export default Ember.Route.extend({
 	model: function() {
-		return this.get('store').find('author');
+		return this.store.find('author');
 	},
 	
   actions: {
@@ -23,7 +23,7 @@ export default Ember.Route.extend({
 
     createAuthor: function() {
       this.send('edit');
-      var newauthor = this.get('store').createRecord('author');
+      var newauthor = this.store.createRecord('author');
       this.transitionTo('author', newauthor.save());
     }
   }
