@@ -1,8 +1,8 @@
 {{#if isEditing}}
-	<button {{action 'doneEditing'}}>Done</button>
-	{{partial 'author-edit'}}
+	<p><button {{action 'doneEditing'}}>Done</button></p>
+	<p>{{partial 'author-edit'}}</p>
 {{else}}
-	<button {{action 'edit'}}>Edit</button>
+	<p><button {{action 'edit'}}>Edit</button></p>
 {{/if}}
 
 <h1>{{model.name}}</h1>
