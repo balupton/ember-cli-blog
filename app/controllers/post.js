@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
 	isEditing: false,
 
   authorlist: function() {
+    console.log("authorlist");
     var selected = this.get('model.author'); // author from post model    
     var content = [];    
     if (selected !== null) {    
@@ -20,5 +21,5 @@ export default Ember.Controller.extend({
     });
 
     return content.sort();
-  }.property("model.author")
+  }.property("model.author", "controllers.posts.allAuthors.@each.name")
 });
