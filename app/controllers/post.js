@@ -5,7 +5,6 @@ export default Ember.Controller.extend({
 	isEditing: false,
 
   authorlist: function() {
-    console.log("authorlist");
     var selected = this.get('model.author'); // author from post model    
     var content = [];    
     if (selected !== null) {    
