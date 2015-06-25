@@ -5,9 +5,9 @@
 		<div class="navbar-inner">
 			<a class="navbar-brand" href="#">Bloggr</a>
 			<ul class="nav navbar-nav">
-				<li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
-				<li>{{#link-to 'authors'}}Authors{{/link-to}}</li>
-				<li>{{#link-to 'about'}}About{{/link-to}}</li>
+				{{#active-link}}{{#link-to 'posts'}}Posts{{/link-to}}{{/active-link}}
+				{{#active-link}}{{#link-to 'authors'}}Authors{{/link-to}}{{/active-link}}
+				{{#active-link}}{{#link-to 'about'}}About{{/link-to}}{{/active-link}}
 			</ul>
 		</div>
 	</div>
