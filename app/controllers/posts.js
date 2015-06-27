@@ -1,5 +1,6 @@
 import Ember from "ember";
 import pagedArray from 'ember-cli-pagination/computed/paged-array';
+import computedFilterByQuery from 'ember-cli-filter-by-query/util/filter';
 
 export default Ember.ArrayController.extend({
   sortProperties: ['date'],
@@ -15,15 +16,12 @@ export default Ember.ArrayController.extend({
   totalPagesBinding: "pagedContent.totalPages",
   
   filteredContent: function() {
-    if (this.get('query')) {
-      return this.get('arrangedContent').filter(function(item) {
-        var query = this.get('query').toLowerCase(),
-            title = (item.get('title') || '').toLowerCase(),
-            body = (item.get('body') || '').toLowerCase();
-
-        return title.match(query) || body.match(query);
-      }.bind(this));
-    }
-    return this.get('arrangedContent');
+    const arrangedContentArray = Ember.makeArray(this.get('arrangedContent'));
+    return computedFilterByQuery(
+      arrangedContentArray,
+      ['title', 'body'],
+      this.get('query'),
+      { conjunction: 'and' }
+    );
   }.property('arrangedContent', 'query')
 });
