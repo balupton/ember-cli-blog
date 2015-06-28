@@ -16,12 +16,12 @@ export default Ember.ArrayController.extend({
   totalPagesBinding: "pagedContent.totalPages",
   
   filteredContent: function() {
-    const arrangedContentArray = Ember.makeArray(this.get('arrangedContent'));
+    var arrangedContentArray = Ember.makeArray(this.get('arrangedContent'));
     return computedFilterByQuery(
       arrangedContentArray,
-      ['title', 'body'],
+      ['title', 'body', 'author', 'excerpt'],
       this.get('query'),
       { conjunction: 'and' }
     );
-  }.property('arrangedContent', 'query')
+  }.property('arrangedContent.@each.title', 'arrangedContent.@each.author', 'query')
 });
