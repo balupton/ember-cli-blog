@@ -5,8 +5,9 @@ export default Ember.Component.extend({
   
   monitorSpin: function(){
     if(this.get('spin')){
-      //Do Asynchronous action here. Set "isSpinning = false" after a timeout.
+      //Set "spin = false" after a timeout.
       Ember.run.later(function(){
+        this.get('monitorSpin'); // Make sure the Spinner stops if observes does not see change
         this.set('spin', false);
       }.bind(this), 1000);
     }
