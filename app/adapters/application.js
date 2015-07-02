@@ -20,6 +20,10 @@ export default Adapter.extend({
       var obj = this.db.rel.parseDocID(change.id);
       // skip changes for non-relational_pouch docs. E.g., design docs.
       if (!obj.type || obj.type === '') { return; }
+      
+      var appController = this.container.lookup("controller:application")
+      appController.send('kickSpin');
+      
       var store = this.container.lookup('store:main');
       store.find(obj.type);
     }.bind(this));

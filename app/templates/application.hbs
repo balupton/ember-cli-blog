@@ -1,5 +1,4 @@
 <h1 id='title'>Welcome to Ember.js</h1>
-
 <div class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-inner">
@@ -10,6 +9,7 @@
 				{{#active-link}}{{#link-to 'about'}}About{{/link-to}}{{/active-link}}
 			</ul>
 		</div>
+		<div class='text-right'>{{refresh-indicator spin=isSpinning}}</div>
 	</div>
 </div>
 
