@@ -1,15 +1,17 @@
 <h1 id='title'>Welcome to Ember.js</h1>
 <div class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
-		<div class="navbar-inner">
+	  <div class="navbar-header">
 			<a class="navbar-brand" href="#">Bloggr</a>
+    </div>
+		<div class="navbar-inner">
 			<ul class="nav navbar-nav">
 				{{#active-link}}{{#link-to 'posts'}}Posts{{/link-to}}{{/active-link}}
 				{{#active-link}}{{#link-to 'authors'}}Authors{{/link-to}}{{/active-link}}
 				{{#active-link}}{{#link-to 'about'}}About{{/link-to}}{{/active-link}}
 			</ul>
+      <p class="navbar-btn navbar-right spinner">{{refresh-indicator spin=isSpinning}}</p>
 		</div>
-		<div class='text-right'>{{refresh-indicator spin=isSpinning}}</div>
 	</div>
 </div>
 
