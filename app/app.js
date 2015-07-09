@@ -7,10 +7,11 @@ var App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
-marked.setOptions({
+// Still need tot fix this for ember-cli 1.13.1
+/* marked.setOptions({
   renderer: new marked.Renderer(),
   breaks: true
-});
+}); */
 
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
