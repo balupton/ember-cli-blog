@@ -1,24 +1,22 @@
 import Ember from "ember";
 
 export default Ember.Route.extend({
-	model: function() {
-		return this.store.find('post');
-	},
-
-  afterModel: function() {
-    var me = this;
-    var authorsPromise = this.store.find('author');
-
-    authorsPromise.then(function(authors) {
-      // can't set on post controller at this point because post controller doesn't exist yet
-      // could also do this in post route afterModel and put it on post controller if we wanted
-      me.controllerFor('posts').set('allAuthors',authors);
+  model: function() {
+    var store = this.store;
+    return Ember.RSVP.hash({
+      posts: store.findAll('post'),
+      authors: store.findAll('author')
     });
-
-    // returning the promise tells the route to wait until it is resolved before continuing
-    return authorsPromise;
   },
-	
+
+  setupController: function(controller, models) {
+    var posts = models.posts;
+    var authors = models.authors;
+
+    this.controllerFor('posts').set('content', posts);
+    this.controllerFor('posts').set('allAuthors', authors);
+  },
+		
   actions: {
 	  edit: function() {
 			this.controllerFor('post').set('isEditing', true);
