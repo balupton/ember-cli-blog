@@ -10,13 +10,10 @@ export default Ember.Route.extend({
   },
 
   setupController: function(controller, models) {
-    var posts = models.posts;
-    var authors = models.authors;
-
-    this.controllerFor('posts').set('content', posts);
-    this.controllerFor('posts').set('allAuthors', authors);
+    controller.set('content', models.posts);
+    controller.set('allAuthors', models.authors);
   },
-		
+
   actions: {
 	  edit: function() {
 			this.controllerFor('post').set('isEditing', true);
@@ -26,7 +23,7 @@ export default Ember.Route.extend({
 			this.controllerFor('post').set('isEditing', false);
 			this.modelFor('post').save();
 		},
-		
+
 		deletePost: function() {
       this.modelFor('post').destroyRecord().then(function() {
         this.transitionTo('posts');
@@ -41,5 +38,5 @@ export default Ember.Route.extend({
       this.transitionTo('post', newPost.save());
     }
   }
-  
+
 });
