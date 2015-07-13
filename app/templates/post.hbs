@@ -1,9 +1,4 @@
-{{#if isEditing}}
-	<p><button {{action 'doneEditing'}}>Done</button></p>
-	<p>{{partial 'post-edit'}}</p>
-{{else}}
-	<p><button {{action 'edit'}}>Edit</button></p>
-{{/if}}
+{{blog-post-edit post=model authors=authors isEditing=isEditing saveAction="savePost" deleteAction="deletePost"}}
 
 <h1>{{model.title}}</h1>
 <h2>by {{model.author}} <small class='muted'>({{format-date model.date}})</small></h2>

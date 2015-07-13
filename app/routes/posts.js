@@ -11,32 +11,26 @@ export default Ember.Route.extend({
 
   setupController: function(controller, models) {
     controller.set('content', models.posts);
-    controller.set('allAuthors', models.authors);
+    controller.set('authors', models.authors);
   },
 
   actions: {
-	  edit: function() {
-			this.controllerFor('post').set('isEditing', true);
-		},
-
-		doneEditing: function() {
-			this.controllerFor('post').set('isEditing', false);
-			this.modelFor('post').save();
-		},
-
-		deletePost: function() {
-      this.modelFor('post').destroyRecord().then(function() {
-        this.transitionTo('posts');
-      }.bind(this));
-    },
-
     createPost: function() {
-      this.send('edit');
+      this.controllerFor('post').set('isEditing', true);
       var newPost = this.store.createRecord('post');
       newPost.set('date' , new Date());
       newPost.set('author' , 'C.L.I. Ember');
       this.transitionTo('post', newPost.save());
+    },
+
+    savePost: function() {
+      this.modelFor('post').save();
+    },
+
+    deletePost: function() {
+      this.modelFor('post').destroyRecord().then(function() {
+        this.transitionTo('posts');
+      }.bind(this));
     }
   }
-
 });

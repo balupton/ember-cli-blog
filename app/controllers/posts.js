@@ -5,7 +5,7 @@ import computedFilterByQuery from 'ember-cli-filter-by-query/util/filter';
 export default Ember.ArrayController.extend({
   sortProperties: ['date'],
   sortAscending: false,
-  
+
   page: 1,
   perPage: 5,
 
@@ -14,7 +14,7 @@ export default Ember.ArrayController.extend({
   queryParams: ["page", "perPage", "query"],
 
   totalPagesBinding: "pagedContent.totalPages",
-  
+
   filteredContent: function() {
     return computedFilterByQuery(
       this.get('arrangedContent'),
