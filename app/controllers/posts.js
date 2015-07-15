@@ -2,10 +2,7 @@ import Ember from "ember";
 import pagedArray from 'ember-cli-pagination/computed/paged-array';
 import computedFilterByQuery from 'ember-cli-filter-by-query/util/filter';
 
-export default Ember.ArrayController.extend({
-  sortProperties: ['date'],
-  sortAscending: false,
-
+export default Ember.Controller.extend({
   page: 1,
   perPage: 5,
 
@@ -14,6 +11,14 @@ export default Ember.ArrayController.extend({
   queryParams: ["page", "perPage", "query"],
 
   totalPagesBinding: "pagedContent.totalPages",
+
+  arrangedContent: function() {
+    return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+      sortProperties: ['date'],
+      sortAscending: false,
+      content: this.get('model')
+    });
+  }.property('model'),
 
   filteredContent: function() {
     return computedFilterByQuery(
