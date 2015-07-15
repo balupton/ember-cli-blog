@@ -1,0 +1,14 @@
+{{blog-post-edit post=post authors=authors isEditing=isEditing saveAction="saveAction" deleteAction="deleteAction"}}
+
+<h1>{{post.title}}</h1>
+<h2>by {{post.author}} <small class='muted'>({{format-date post.date}})</small></h2>
+
+<hr>
+
+<div class='intro'>
+	{{format-markdown post.excerpt}}
+</div>
+
+<div class='below-the-fold'>
+	{{format-markdown post.body}}
+</div>
