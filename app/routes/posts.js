@@ -4,14 +4,13 @@ export default Ember.Route.extend({
   model: function() {
     var store = this.store;
     return Ember.RSVP.hash({
-      posts: store.findAll('post'),
+      content: store.findAll('post'),
       authors: store.findAll('author')
     });
   },
 
   setupController: function(controller, models) {
-    controller.set('content', models.posts);
-    controller.set('authors', models.authors);
+    controller.setProperties(models);
   },
 
   actions: {
