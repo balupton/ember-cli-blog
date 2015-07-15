@@ -4,28 +4,23 @@ export default Ember.Route.extend({
 	model: function() {
 		return this.store.findAll('author');
 	},
-	
-  actions: {
-	  edit: function() {
-			this.controllerFor('author').set('isEditing', true);
-		},
 
-		doneEditing: function() {
-			this.controllerFor('author').set('isEditing', false);
+  actions: {
+		createAuthor: function() {
+      this.controllerFor('author').set('isEditing', true);
+      var newauthor = this.store.createRecord('author');
+      this.transitionTo('author', newauthor.save());
+    },
+
+		saveAuthor: function() {
 			this.modelFor('author').save();
 		},
-		
+
 		deleteAuthor: function() {
       this.modelFor('author').destroyRecord().then(function() {
         this.transitionTo('authors');
       }.bind(this));
-    },
-
-    createAuthor: function() {
-      this.send('edit');
-      var newauthor = this.store.createRecord('author');
-      this.transitionTo('author', newauthor.save());
     }
   }
-  
+
 });

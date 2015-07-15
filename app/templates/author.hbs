@@ -1,8 +1,1 @@
-{{#if isEditing}}
-	<p><button {{action 'doneEditing'}}>Done</button></p>
-	<p>{{partial 'author-edit'}}</p>
-{{else}}
-	<p><button {{action 'edit'}}>Edit</button></p>
-{{/if}}
-
-<h1>{{model.name}}</h1>
+{{blog-author author=model isEditing=isEditing saveAction="saveAuthor" deleteAction="deleteAuthor"}}
