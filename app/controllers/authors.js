@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
   totalPagesBinding: "pagedContent.totalPages",
 
   arrangedContent: function() {
-    return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+    return Ember.ArrayProxy.extend(Ember.SortableMixin).create({
       sortProperties: ['name'],
       sortAscending: true,
       sortFunction: function(v, w) {
