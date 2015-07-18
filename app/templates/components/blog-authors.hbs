@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+	  <!-- author listing -->
+		<div class="col-xs-5">
+		  <button {{action 'createAuthor'}}>Create</button>
+			<table class='table'>
+				<thead>
+					<tr><th>Authors</th></tr>
+				</thead>
+				<tbody>
+				{{#each pagedContent as |author|}}
+				<tr><td>
+					{{#link-to 'author' author}}
+						&bull; {{author.name}}
+					{{/link-to}}
+				</td></tr>
+				{{/each}}
+				</tbody>
+			</table>
+			{{page-numbers content=pagedContent}}
+		</div>
+
+		<!-- author content -->
+		<div class="col-xs-7">
+			{{yield}}
+		</div>
+	</div>
+</div>
