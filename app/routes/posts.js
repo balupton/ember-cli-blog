@@ -15,7 +15,7 @@ export default Ember.Route.extend({
 
   actions: {
     createPost: function() {
-      this.controllerFor('post').set('isEditing', true);
+      this.controllerFor('post').set('globals.isEditing', true);
       var newPost = this.store.createRecord('post');
       newPost.set('date' , new Date());
       newPost.set('author' , 'C.L.I. Ember');

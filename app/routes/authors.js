@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 
   actions: {
 		createAuthor: function() {
-      this.controllerFor('author').set('isEditing', true);
+      this.controllerFor('author').set('globals.isEditing', true);
       var newauthor = this.store.createRecord('author');
       this.transitionTo('author', newauthor.save());
     },
