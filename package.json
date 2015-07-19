@@ -40,6 +40,6 @@
     "ember-cli-pagination": "^0.6.6",
     "ember-cli-selectize": "0.3.4",
     "ember-cli-active-link-wrapper": "0.0.2",
-    "ember-pouch": "git://github.com/nolanlawson/ember-pouch#44b2019eea"
+    "ember-pouch": "^2.0.2"
   }
 }
