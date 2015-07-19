@@ -6,12 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-	this.resource('about');
-	this.resource('posts', function() {
-		this.resource('post', { path: ':post_id' });
+	this.route('about');
+	this.route('posts', function() {
+		this.route('post', { path: ':post_id', resetNamespace: true });
 	});
-	this.resource('authors', function() {
-		this.resource('author', { path: ':author_id' });
+	this.route('authors', function() {
+		this.route('author', { path: ':author_id', resetNamespace: true });
 	});
 });
 
