@@ -45,7 +45,7 @@ module.exports = function(environment) {
   ENV.local_couch = 'bloggr';
   if (environment === 'production') {
     ENV.baseURL = '/bloggrcouch/';
-    ENV.remote_couch = 'https://martinic.iriscouch.com/bloggr';
+    ENV.remote_couch = 'https://martinic.cloudant.com/bloggr';
   }
   ENV.contentSecurityPolicy = {
     'connect-src': "'self' " + ENV.remote_couch.substring(0, ENV.remote_couch.indexOf('/', 9))
