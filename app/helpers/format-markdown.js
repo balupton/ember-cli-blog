@@ -1,5 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Handlebars.makeBoundHelper(function(value) {
-  return new Ember.Handlebars.SafeString(marked(value));
+export default Ember.Helper.helper(function(params) {
+  let value = params[0];
+  return Ember.String.htmlSafe(marked(value));
 });

@@ -1,4 +1,6 @@
 import Ember from "ember";
-export default Ember.Handlebars.makeBoundHelper(function(value) {
-	return moment(value).fromNow();
+
+export default Ember.Helper.helper(function(params) {
+	let value = params[0];
+  return moment(value).fromNow();
 });
