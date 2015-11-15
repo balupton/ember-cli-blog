@@ -40,7 +40,7 @@
     "ember-cli-font-awesome": "0.1.1",
     "ember-cli-pagination": "0.9.0",
     "ember-cli-selectize": "0.3.4",
-    "ember-cli-active-link-wrapper": "0.0.2",
+    "ember-cli-active-link-wrapper": "0.0.4",
     "ember-pouch": "^2.0.2"
   }
 }
