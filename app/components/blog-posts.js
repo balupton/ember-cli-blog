@@ -8,13 +8,8 @@ export default Ember.Component.extend({
 
   totalPagesBinding: "pagedContent.totalPages",
 
-  arrangedContent: function() {
-    return Ember.ArrayProxy.extend(Ember.SortableMixin).create({
-      sortProperties: ['date'],
-      sortAscending: false,
-      content: this.get('posts')
-    });
-  }.property('posts'),
+  postsSorting: ['date:desc'],
+  arrangedContent: Ember.computed.sort('posts', 'postsSorting'),
 
   filteredContent: function() {
     return computedFilterByQuery(

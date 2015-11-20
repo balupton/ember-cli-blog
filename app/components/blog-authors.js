@@ -7,25 +7,8 @@ export default Ember.Component.extend({
 
   totalPagesBinding: "pagedContent.totalPages",
 
-  arrangedContent: function() {
-    return Ember.ArrayProxy.extend(Ember.SortableMixin).create({
-      sortProperties: ['name'],
-      sortAscending: true,
-      sortFunction: function(v, w) {
-        var lowerV = v.toLowerCase();
-        var lowerW = w.toLowerCase();
-
-        if (lowerV < lowerW) {
-          return -1;
-        }
-        if (lowerV > lowerW) {
-          return 1;
-        }
-        return 0;
-      },
-      content: this.get('authors')
-    });
-  }.property('authors'),
+  authorsSorting: ['name'],
+  arrangedContent: Ember.computed.sort('authors', 'authorsSorting'),
 
   actions: {
     createAuthor: function() {
