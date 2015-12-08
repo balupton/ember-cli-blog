@@ -30,8 +30,8 @@ export default Adapter.extend({
       var appController = this.container.lookup("controller:application");
       appController.send('kickSpin');
 
-      var store = this.container.lookup('store:main');
-      store.find(obj.type);
+      var store = this.container.lookup('service:store');
+      store.findAll(obj.type);
     }.bind(this));
   }.on('init')
 });
