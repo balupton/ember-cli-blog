@@ -41,6 +41,6 @@
     "ember-cli-pagination": "0.9.0",
     "ember-cli-selectize": "0.4.3",
     "ember-cli-active-link-wrapper": "0.0.4",
-    "ember-pouch": "git://github.com/rsutphin/ember-pouch#support-1.13-and-up-only"
+    "ember-pouch": "^3.0.0"
   }
 }
