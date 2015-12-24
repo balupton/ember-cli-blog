@@ -4,7 +4,7 @@ This README outlines the details of collaborating on this Ember application.
 
 ## Working example
 
-[http://exmer.com/bloggrcouch/](http://exmer.com/bloggrcouch/)
+[http://bloggr.exmer.com/](http://bloggr.exmer.com/)
 
 ## Prerequisites
 
@@ -28,6 +28,7 @@ You will need the following things properly installed on your computer.
 * update `config/environment.js` `local_couch` and `remote_couch` to your CouchDB
   instance name.
 * update `config/environment.js` `ENV.baseURL` in the production environment
+* To use deploy create `.env.deploy.production` containing something like `db=https://username:password@martinic.cloudant.com/bloggr`
 
 ## Running
 
@@ -44,10 +45,17 @@ You will need the following things properly installed on your computer.
 * `ember build` (development)
 * `ember build --environment production` (production)
 
+## Deploy
+
+To deploy to your CouchDB cluster
+
+* `ember deploy production` (Set your credentials in `.env.deploy.production`)
+
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
 * [ember-cli](http://www.ember-cli.com/)
+* [ember-cli-deploy-couchdb](https://github.com/martinic/ember-cli-deploy-couchdb)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
