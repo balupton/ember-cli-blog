@@ -28,7 +28,7 @@ You will need the following things properly installed on your computer.
 * update `config/environment.js` `local_couch` and `remote_couch` to your CouchDB
   instance name.
 * update `config/environment.js` `ENV.baseURL` in the production environment
-* To use deploy create a file `.env.deploy.production` in the root of your this project containing something like `db=https://username:password@martinic.cloudant.com/bloggr`
+* To use deploy create a file `.env.deploy.production` in the root of this project containing something like `db=https://username:password@martinic.cloudant.com/bloggr`
 
 ## Running
 
