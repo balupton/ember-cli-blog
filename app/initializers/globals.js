@@ -1,4 +1,4 @@
-export function initialize(container, application) {
+export function initialize(application) {
   var globals = {
     isEditing: false
   };
