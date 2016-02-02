@@ -16,8 +16,5 @@
     "selectize": "~0.12.1",
     "sifter": "~0.4.1",
     "font-awesome": "~4.4.0"
-  },
-  "resolutions": {
-    "ember": "2.2.0"
   }
 }
