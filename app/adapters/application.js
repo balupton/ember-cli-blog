@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import config from '../config/environment';
 import PouchDB from 'pouchdb';
 import { Adapter } from 'ember-pouch';
@@ -6,6 +7,8 @@ var db = new PouchDB(config.local_couch || 'bloggr');
 var remote = new PouchDB(config.remote_couch, {ajax: {timeout: 20000}});
 
 db.sync(remote, {live: true, retry: true});
+
+const { getOwner } = Ember;
 
 export default Adapter.extend({
   db: db,
@@ -27,10 +30,10 @@ export default Adapter.extend({
       // skip changes for non-relational_pouch docs. E.g., design docs.
       if (!obj.type || obj.type === '') { return; }
 
-      var appController = this.container.lookup("controller:application");
+      var appController = getOwner(this).lookup("controller:application");
       appController.send('kickSpin');
 
-      var store = this.container.lookup('service:store');
+      var store = getOwner(this).lookup('service:store');
       store.findAll(obj.type);
     }.bind(this));
   }.on('init')
