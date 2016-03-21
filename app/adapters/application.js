@@ -13,12 +13,6 @@ const { getOwner } = Ember;
 export default Adapter.extend({
   db: db,
 
-  // Ember Data 2.0 Reload behavior
-  shouldReloadRecord: function() { return true; },
-  shouldReloadAll: function() { return true; },
-  shouldBackgroundReloadRecord: function() { return true; },
-  shouldBackgroundReloadAll: function() { return true; },
-
   unloadedDocumentChanged: function(obj) {
     var appController = getOwner(this).lookup("controller:application");
     appController.send('kickSpin');
