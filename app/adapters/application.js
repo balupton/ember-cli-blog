@@ -19,22 +19,14 @@ export default Adapter.extend({
   shouldBackgroundReloadRecord: function() { return true; },
   shouldBackgroundReloadAll: function() { return true; },
 
-  // Change watcher for ember-data
-  immediatelyLoadAllChangedRecords: function() {
-    this.db.changes({
-      since: 'now',
-      live: true,
-      returnDocs: false
-    }).on('change', function (change) {
-      var obj = this.db.rel.parseDocID(change.id);
-      // skip changes for non-relational_pouch docs. E.g., design docs.
-      if (!obj.type || obj.type === '') { return; }
-
-      var appController = getOwner(this).lookup("controller:application");
-      appController.send('kickSpin');
-
-      var store = getOwner(this).lookup('service:store');
-      store.findAll(obj.type);
-    }.bind(this));
-  }.on('init')
+  unloadedDocumentChanged: function(obj) {
+    var appController = getOwner(this).lookup("controller:application");
+    appController.send('kickSpin');
+      
+    let store = this.get('store');
+    let recordTypeName = this.getRecordTypeName(store.modelFor(obj.type));
+    this.get('db').rel.find(recordTypeName, obj.id).then(function(doc) {
+      store.pushPayload(recordTypeName, doc);
+    });
+  }
 });
