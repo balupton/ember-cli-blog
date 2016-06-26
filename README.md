@@ -13,7 +13,7 @@ You will need the following things properly installed on your computer.
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM)
 * [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
+* [Ember CLI](http://ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
 ## Installation
@@ -54,7 +54,7 @@ To deploy to your CouchDB cluster
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
+* [ember-cli](http://ember-cli.com/)
 * [ember-cli-deploy-couchdb](https://github.com/martinic/ember-cli-deploy-couchdb)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
