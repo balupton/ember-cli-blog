@@ -3,6 +3,7 @@ import Ember from "ember";
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
 	sessionInvalidated() {
-		//nothing to do, data may still be viewed, so no window.reload needed
+		//data may still be viewed, so no window.reload needed
+		this.transitionTo('index');
 	},
 });

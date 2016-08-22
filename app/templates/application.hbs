@@ -7,7 +7,12 @@
 		<div class="navbar-inner">
 			<ul class="nav navbar-nav">
 				{{#active-link}}{{#link-to 'posts'}}Posts{{/link-to}}{{/active-link}}
+				{{#if session.isAuthenticated}}
 				{{#active-link}}{{#link-to 'authors'}}Authors{{/link-to}}{{/active-link}}
+				<li><a href="#" {{action "logout"}}>Logout</a></li>
+				{{else}}
+				{{#active-link}}{{#link-to 'login'}}Login{{/link-to}}{{/active-link}}
+				{{/if}}
 				{{#active-link}}{{#link-to 'about'}}About{{/link-to}}{{/active-link}}
 			</ul>
       <p class="navbar-btn navbar-right spinner">{{refresh-indicator spin=isSpinning}}</p>
