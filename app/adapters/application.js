@@ -27,6 +27,13 @@ export default Adapter.extend({
 	  retry: true
 	});
 	
+//NOTE: to detect errors with syncing, use the following.
+//This will be called if a document can't be written in the demo due to logout on db
+//	sync.on('denied', function(e) {
+//		e.direction;//push/pull
+//		e.doc;//document that failed replication, e.doc.reason has couch error message
+//	});
+	
 	remoteDb.on('loggedin', function() {
 		//NOTE: remotedb needs to be recreated, since the taskqueue is marked as failed
 		//		resetting the taskqueue could work too, but the initial fail mark could have stopped extra code
