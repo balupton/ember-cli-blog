@@ -27,7 +27,7 @@ You will need the following things properly installed on your computer.
 * `add-cors-to-couchdb`
 * update `config/environment.js` `local_couch` and `remote_couch` to your CouchDB
   instance name.
-* update `config/environment.js` `ENV.baseURL` in the production environment
+* update `config/environment.js` `ENV.rootURL` in the production environment
 * To use deploy create a file `.env.deploy.production` in the root of this project containing something like `db=https://username:password@martinic.cloudant.com/bloggr`
 
 ## Running
@@ -59,4 +59,3 @@ To deploy to your CouchDB cluster
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
