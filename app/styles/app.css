@@ -1,1 +1,4 @@
-p.spinner { padding-top: 2px; }
+p.spinner { padding-top: 2px; margin-left: 8px; margin-right: 8px; }
+.navbar-btn { float: left; }
+.push { color: red; }
+.push-enabled { color: green; }
