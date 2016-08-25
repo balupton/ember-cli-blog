@@ -6,6 +6,8 @@ import { Adapter } from 'ember-pouch';
 const { getOwner, assert, isEmpty } = Ember;
 
 export default Adapter.extend({
+  session: Ember.inject.service(),
+  
   init() {
     this._super(...arguments);
     
@@ -43,10 +45,20 @@ export default Adapter.extend({
 		//remoteDb.taskqueue.failed = false;
 		//remoteDb.taskqueue.isReady = true;
 		
-		if (pushReplication)
+		if (pushReplication) {
 			pushReplication.cancel();
+		}
 		
 		pushReplication = db.replicate.to(remoteDb, replicationOptions);
+		
+		pushReplication.on('denied', () => {
+			//there was an error pushing, probably logged out outside of this app (couch/cloudant dashboard)
+			self.get('session').invalidate();//this cancels the replication
+			
+			throw({message: "Replication failed. Check login?"});//prevent doc from being marked replicated
+		}).on('error',() => {
+			self.get('session').invalidate();//mark error by loggin out
+		});
 		
 //		remoteDb = new PouchDB(config.remote_couch, {ajax: {timeout: 20000}});
 //		self.set('remoteDb', remoteDb);
@@ -60,8 +72,9 @@ export default Adapter.extend({
 //		  retry: true
 //		});
 	}).on('loggedout', function() {
-		if (pushReplication)
+		if (pushReplication) {
 			pushReplication.cancel();
+		}
 		pushReplication = null;
 	});
 		
