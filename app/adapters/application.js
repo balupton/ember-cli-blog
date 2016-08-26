@@ -51,11 +51,13 @@ export default Adapter.extend({
 		
 		pushReplication = db.replicate.to(remoteDb, replicationOptions);
 		
-		pushReplication.on('denied', () => {
-			//there was an error pushing, probably logged out outside of this app (couch/cloudant dashboard)
-			self.get('session').invalidate();//this cancels the replication
-			
-			throw({message: "Replication failed. Check login?"});//prevent doc from being marked replicated
+		pushReplication.on('denied', (err) => {
+			if (!err.id.startsWith('_design/')) {
+				//there was an error pushing, probably logged out outside of this app (couch/cloudant dashboard)
+				self.get('session').invalidate();//this cancels the replication
+				
+				throw({message: "Replication failed. Check login?"});//prevent doc from being marked replicated
+			}
 		}).on('error',() => {
 			self.get('session').invalidate();//mark error by loggin out
 		});
