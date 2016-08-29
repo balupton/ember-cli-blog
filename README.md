@@ -51,11 +51,35 @@ To deploy to your CouchDB cluster
 
 * `ember deploy production` (Set your credentials in the `.env.deploy.production` file)
 
+## Authentication
+
+ember-simple-auth-pouch authenticator with custom data adapter to setup push replication after login. See authenticators/pouch.js and adapters/application for further details.
+
+## Authorization
+
+### CouchDB write protected database:
+
+Registration required example for write persmission: Add users in the normal CouchDB way and add the following design document.
+```
+{
+   "_id": "_design/only_users_write",
+   "validate_doc_update": "function (newDoc, oldDoc, userCtx) {\n\tif (!userCtx.name) {\n\t\tthrow({unauthorized: \"Only registered users can save data!\"});\n\t}\n}"
+}
+```
+
+Or use any other role based check to validate your users if there are more applications on your database.
+
+### Secret route
+
+There is one `secret` route setup to demonstrate how to use ember-simple-auth to protect routes. More instructions can be read there.
+
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
 * [ember-cli](http://ember-cli.com/)
 * [ember-cli-deploy-couchdb](https://github.com/martinic/ember-cli-deploy-couchdb)
+* [ember-simple-auth](https://ember-simple-auth.com/)
+* [ember-simple-auth-pouch](https://github.com/martinic/ember-simple-auth-pouch)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
