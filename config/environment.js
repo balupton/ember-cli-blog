@@ -44,7 +44,7 @@ module.exports = function(environment) {
   ENV.local_couch = 'bloggr';
   ENV.authAdapter = 'application';
   if (environment === 'production') {
-    ENV.baseURL = '/';
+    ENV.rootURL = '/';
     ENV.remote_couch = 'https://martinic.cloudant.com/bloggr';
   }
   ENV.contentSecurityPolicy = {
