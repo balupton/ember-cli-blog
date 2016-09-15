@@ -59,15 +59,29 @@ ember-simple-auth-pouch authenticator with custom data adapter to setup push rep
 
 ### CouchDB write protected database:
 
-Registration required example for write persmission: Add users in the normal CouchDB way and add the following design document.
+Registration required example for write persmission: Add users in the normal CouchDB way.
+For example by adding the following document to the `_users` database:
 ```
 {
-   "_id": "_design/only_users_write",
-   "validate_doc_update": "function (newDoc, oldDoc, userCtx) {\n\tif (!userCtx.name) {\n\t\tthrow({unauthorized: \"Only registered users can save data!\"});\n\t}\n}"
+  "_id": "org.couchdb.user:test",
+  "name": "test",
+  "password": "test",
+  "roles": [
+    "bloggr"
+  ],
+  "type": "user"
 }
 ```
 
-Or use any other role based check to validate your users if there are more applications on your database.
+After that you can protect your `bloggr` database from unauthorized writes by adding the following design document to the `bloggr` database.
+```
+{
+   "_id": "_design/only_users_write",
+   "validate_doc_update": "function (newDoc, oldDoc, userCtx) {\n\tif (userCtx.roles.indexOf(\"bloggr\") == -1 && userCtx.roles.indexOf(\"_admin\") == -1) {\n\t\tthrow({unauthorized: \"Only registered users can save data!\"});\n\t}\n}"
+}
+```
+
+For Cloudant you have to create a `_users` database and insert the userdocument from above.
 
 ### Secret route
 
