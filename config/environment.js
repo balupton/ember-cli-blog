@@ -42,6 +42,7 @@ module.exports = function(environment) {
 
   ENV.remote_couch = 'http://localhost:5984/bloggr';
   ENV.local_couch = 'bloggr';
+  ENV.authAdapter = 'application';
   if (environment === 'production') {
     ENV.rootURL = '/';
     ENV.remote_couch = 'https://martinic.cloudant.com/bloggr';
