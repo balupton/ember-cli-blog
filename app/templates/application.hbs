@@ -13,22 +13,30 @@
 				{{#active-link}}{{#link-to 'secret'}}Secret{{/link-to}}{{/active-link}}
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="push {{if session.isAuthenticated "push-enabled"}}" title="Login to push data">
-      				<p class="navbar-btn">
-      					<i aria-hidden class="fa fa-2x fa-cloud-upload"></i>
-      				</p>
-      				<p class="navbar-text">
-      					Push {{if session.isAuthenticated "enabled" "disabled"}}
-      				</p>
-			  	</li>
-			  	{{#if session.isAuthenticated}}
+        <li class="push {{if cloudState.cloudPull "push-enabled"}}" title="Pull data">
+          <p class="navbar-btn">
+            <i aria-hidden class="fa fa-2x fa-cloud-download"></i>
+          </p>
+          <p class="navbar-text">
+            Pull {{if cloudStatePull "enabled" "disabled"}}
+          </p>
+        </li>
+				<li class="push {{if cloudState.cloudPush "push-enabled"}}" title="Push data">
+      		<p class="navbar-btn">
+      			<i aria-hidden class="fa fa-2x fa-cloud-upload"></i>
+      		</p>
+      		<p class="navbar-text">
+      			Push {{if cloudState.cloudPush "enabled" "disabled"}}
+      		</p>
+			  </li>
+			  {{#if session.isAuthenticated}}
 				<li><a href="#" {{action "logout"}}>Logout</a></li>
 				{{else}}
 				{{#active-link}}{{#link-to 'login'}}Login{{/link-to}}{{/active-link}}
 				{{/if}}
 				<li>
-      				<p class="navbar-btn spinner">{{refresh-indicator spin=isSpinning}}</p>
-			  	</li>
+        	<p class="navbar-btn spinner">{{refresh-indicator spin=isSpinning}}</p>
+				</li>
 			</ul>
 		</div>
 	</div>
