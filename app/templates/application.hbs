@@ -18,7 +18,7 @@
             <i aria-hidden class="fa fa-2x fa-cloud-download"></i>
           </p>
           <p class="navbar-text">
-            Pull {{if cloudStatePull "enabled" "disabled"}}
+            Pull {{if cloudState.cloudPull "synced" "not synced"}}
           </p>
         </li>
 				<li class="push {{if cloudState.cloudPush "push-enabled"}}" title="Push data">
@@ -26,7 +26,7 @@
       			<i aria-hidden class="fa fa-2x fa-cloud-upload"></i>
       		</p>
       		<p class="navbar-text">
-      			Push {{if cloudState.cloudPush "enabled" "disabled"}}
+      			Push {{if cloudState.cloudPush "synced" "not synced"}}
       		</p>
 			  </li>
 			  {{#if session.isAuthenticated}}
