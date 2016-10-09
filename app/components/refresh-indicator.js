@@ -1,14 +1,15 @@
 import Ember from 'ember';
 
+const {set, get} = Ember;
+
 export default Ember.Component.extend({
   spin: false,
-  
+
   monitorSpin: function(){
-    if(this.get('spin')){
+    if(get(this, 'spin')){
       //Set "spin = false" after a timeout.
       Ember.run.later(function(){
-        this.get('monitorSpin'); // Make sure the Spinner stops if observes does not see change
-        this.set('spin', false);
+        set(this, 'spin', false);
       }.bind(this), 1000);
     }
   }.observes('spin')
