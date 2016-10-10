@@ -1,6 +1,6 @@
 import Ember from "ember";
 
-const { inject: {service} } = Ember;
+const { set, get, inject: {service} } = Ember;
 
 export default Ember.Controller.extend({
 	session: service(),
@@ -10,10 +10,10 @@ export default Ember.Controller.extend({
 
 	actions:{
 	  kickSpin: function() {
-      this.set('isSpinning', true);
+      set(this, 'isSpinning', true);
     },
     logout: function() {
-    	this.get('session').invalidate();
+    	get(this, 'session').invalidate();
     },
   }
 });
