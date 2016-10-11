@@ -3,11 +3,12 @@ import config from '../config/environment';
 import PouchDB from 'pouchdb';
 import { Adapter } from 'ember-pouch';
 
-const { getOwner, assert, isEmpty, inject: {service} } = Ember;
+const { assert, isEmpty, inject: {service} } = Ember;
 
 export default Adapter.extend({
   session: service(),
   cloudState: service(),
+  refreshIndicator: service(),
 
   init() {
     this._super(...arguments);
@@ -52,8 +53,7 @@ export default Adapter.extend({
   },
 
   unloadedDocumentChanged: function(obj) {
-    var appController = getOwner(this).lookup("controller:application");
-    appController.send('kickSpin');
+    this.get('refreshIndicator').kickSpin();
 
     let store = this.get('store');
     let recordTypeName = this.getRecordTypeName(store.modelFor(obj.type));
