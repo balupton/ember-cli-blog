@@ -44,7 +44,7 @@
     "ember-data": "2.7.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.5",
-    "ember-font-awesome": "2.1.1",
+    "ember-font-awesome": "2.2.0",
     "ember-load-initializers": "^0.5.1",
     "ember-pouch": "4.0.1",
     "ember-resolver": "^2.0.3",
