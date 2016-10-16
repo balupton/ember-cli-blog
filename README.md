@@ -81,7 +81,7 @@ After that you can protect your `bloggr` database from unauthorized writes by ad
 }
 ```
 
-For Cloudant you have to create a `_users` database and insert the userdocument from above.
+For Cloudant you have to create a `_users` database and insert the userdocument from above or use the Hoodie [CouchDB User Management App](http://gr2m.github.io/couchdb-user-management-app/) 
 
 ### Secret route
 
