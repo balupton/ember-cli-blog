@@ -2,8 +2,6 @@
   "predef": [
     "document",
     "window",
-    "PouchDB",
-    "EmberPouch",
     "marked",
     "-Promise"
   ],
