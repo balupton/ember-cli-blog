@@ -21,7 +21,6 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('bower_components/marked/lib/marked.js');
-  app.import('bower_components/moment/moment.js');
   app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 
   return app.toTree();
