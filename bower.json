@@ -4,7 +4,6 @@
     "ember": "~2.8.0",
     "ember-cli-shims": "0.1.1",
     "ember-qunit-notifications": "0.1.0",
-    "marked": "~0.3.3",
     "bootstrap": "~3.2.0",
     "pouchdb": "^5.4.5",
     "pouchdb-authentication": "^0.5.3",
@@ -12,6 +11,7 @@
     "selectize": "~0.12.1",
     "sifter": "0.5.x",
     "font-awesome": "~4.4.0",
-    "pouchdb-find": "^0.10.2"
+    "pouchdb-find": "^0.10.2",
+    "marked": "^0.3.6"
   }
 }
