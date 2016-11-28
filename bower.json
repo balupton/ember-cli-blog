@@ -6,7 +6,7 @@
     "ember-qunit-notifications": "0.1.0",
     "pouchdb": "^5.4.5",
     "pouchdb-authentication": "^0.5.3",
-    "relational-pouch": "^1.4.4",
+    "relational-pouch": "^1.4.5",
     "selectize": "~0.12.1",
     "sifter": "0.5.x",
     "font-awesome": "~4.4.0",
