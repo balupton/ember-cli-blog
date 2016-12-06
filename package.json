@@ -36,7 +36,7 @@
     "ember-cli-deploy-couchdb": "0.1.2",
     "ember-cli-filter-by-query": "1.2.0",
     "ember-cli-htmlbars": "^1.0.10",
-    "ember-cli-htmlbars-inline-precompile": "^0.3.5",
+    "ember-cli-htmlbars-inline-precompile": "^0.3.6",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-jshint": "^2.0.1",
     "ember-cli-marked": "^0.1.0",
