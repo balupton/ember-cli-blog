@@ -2,11 +2,13 @@
   "name": "myapp",
   "version": "0.0.0",
   "description": "Small description for ember-cli-update goes here",
-  "private": true,
+  "license": "MIT",
+  "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
+  "repository": "",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
@@ -14,7 +16,7 @@
   },
   "repository": "",
   "engines": {
-    "node": ">= 4"
+    "node": ">= 0.12.0"
   },
   "author": "",
   "license": "MIT",
@@ -23,7 +25,7 @@
     "broccoli-manifest": "0.0.7",
     "broccoli-merge-trees": "^1.1.5",
     "ember-ajax": "^2.5.2",
-    "ember-cli": "2.8.0",
+    "ember-cli": "2.10.0",
     "ember-cli-active-link-wrapper": "0.3.2",
     "ember-cli-app-version": "^2.0.0",
     "ember-cli-babel": "^5.1.10",
@@ -46,7 +48,7 @@
     "ember-cli-sri": "^2.1.1",
     "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
-    "ember-data": "2.8.1",
+    "ember-data": "2.10.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.1.1",
     "ember-font-awesome": "2.2.0",
@@ -57,5 +59,6 @@
     "install": "^0.8.2",
     "loader.js": "^4.0.11",
     "npm": "^4.0.2"
-  }
+  },
+  "private": true
 }
