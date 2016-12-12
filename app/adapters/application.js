@@ -21,10 +21,6 @@ export default Adapter.extend({
   	let self = this;
 
     let remoteDb = new PouchDB(config.remote_couch, {ajax: {timeout: 20000}});
-    remoteDb.catch(function(e) {
-	   	if (e.status === 401) {
-      }
-  	});
 
     let replicationOptions = {
 	    live: true,
