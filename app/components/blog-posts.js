@@ -14,11 +14,11 @@ export default Ember.Component.extend({
   filteredContent: function() {
     return computedFilterByQuery(
       this.get('arrangedContent'),
-      ['title', 'body', 'author', 'excerpt'],
+      ['title', 'body', 'author.name', 'excerpt'],
       this.get('query'),
       { conjunction: 'and', sort: false}
     );
-  }.property('arrangedContent.@each.title', 'arrangedContent.@each.author', 'query'),
+  }.property('arrangedContent.@each.title', 'arrangedContent.@each.author.name', 'query'),
 
   actions: {
     createPost: function() {
