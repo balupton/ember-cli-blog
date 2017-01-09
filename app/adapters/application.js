@@ -6,6 +6,8 @@ import { Adapter } from 'ember-pouch';
 const { assert, isEmpty, inject: {service} } = Ember;
 
 export default Adapter.extend({
+  coalesceFindRequests: false,  // Temp fix for embr-data Bug https://github.com/emberjs/data/issues/4463
+
   session: service(),
   cloudState: service(),
   refreshIndicator: service(),
