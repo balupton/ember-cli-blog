@@ -13,6 +13,14 @@ export default Ember.Route.extend({
     controller.setProperties(models);
   },
 
+  redirect: function(model, transition) {
+    if (transition.targetName === 'posts.index') {
+      if (model.content.get('length') !== 0) {
+        this.transitionTo('post', model.content.sortBy('date').reverse().get('firstObject'));
+      }
+    }
+  },
+
   actions: {
     createPost: function() {
       this.controllerFor('post').set('globals.isEditing', true);
