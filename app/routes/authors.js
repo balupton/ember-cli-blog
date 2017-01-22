@@ -1,9 +1,17 @@
 import Ember from "ember";
 
 export default Ember.Route.extend({
-	model: function() {
-		return this.store.findAll('author');
-	},
+  model: function() {
+    var store = this.store;
+    return Ember.RSVP.hash({
+      content: store.findAll('author'),
+      posts: store.findAll('post')
+    });
+  },
+
+  setupController: function(controller, models) {
+    controller.setProperties(models);
+  },
 
   actions: {
 		createAuthor: function() {

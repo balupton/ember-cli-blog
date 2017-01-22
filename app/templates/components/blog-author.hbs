@@ -1,3 +1,12 @@
 {{blog-author-edit author=author isEditing=isEditing saveAction="saveAction" deleteAction="deleteAction"}}
 
 <h1>{{author.name}}</h1>
+
+Posts by {{author.name}}:
+<ul>
+  {{#each author.posts as |post|}}
+    {{#link-to 'post' post}}
+      <li>{{post.title}}</li>
+    {{/link-to}}
+  {{/each}}
+</ul>
