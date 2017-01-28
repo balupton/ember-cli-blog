@@ -15,16 +15,13 @@
     "test": "ember test"
   },
   "repository": "",
-  "engines": {
-    "node": ">= 0.12.0"
-  },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.5.0",
     "broccoli-manifest": "0.0.7",
     "ember-ajax": "^2.5.3",
-    "ember-cli": "2.10.0",
+    "ember-cli": "2.11.0",
     "ember-cli-active-link-wrapper": "0.3.2",
     "ember-cli-app-version": "^2.0.1",
     "ember-cli-babel": "^5.2.1",
@@ -44,18 +41,22 @@
     "ember-cli-qunit": "^3.0.4",
     "ember-cli-release": "^0.2.9",
     "ember-cli-selectize": "0.5.12",
+    "ember-cli-shims": "^1.0.2",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
-    "ember-data": "2.10.0",
-    "ember-disable-proxy-controllers": "^1.0.1",
+    "ember-data": "2.11.0",
     "ember-export-application-global": "^1.1.1",
     "ember-font-awesome": "2.2.0",
     "ember-load-initializers": "^0.6.3",
     "ember-pouch": "4.2.3",
     "ember-resolver": "^2.1.0",
+    "ember-source": "^2.11.0",
     "ember-simple-auth-pouch": "0.1.0-beta.3",
     "loader.js": "^4.1.0"
+  },
+  "engines": {
+    "node": ">= 0.12.0"
   },
   "private": true
 }
