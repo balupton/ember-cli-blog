@@ -18,10 +18,18 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone` this repository
-* `cd ember-cli-blog`
-* `npm install`
-* `bower install`
+To get up and running with this project:
+
+* `git clone` this repository and cd into it `cd ember-cli-blog`
+* `npm install` to install npm dependencies (will also install the needed bower dependencies via a `postinstall` hook)
+* `npm run start` to start the server!
+
+Data will be stored in an in memory database and if configured, also replicated to a CouchDB instance.
+
+To setup CouchDB data replication, configure `ENV.remote_couch` inside `./config/environment.js` to point to your CouchDB location.
+
+To setup a CouchDB instance on your own machine:
+
 * install couchDB from http://couchdb.apache.org/
 * `npm install -g add-cors-to-couchdb`
 * `add-cors-to-couchdb`
@@ -29,6 +37,7 @@ You will need the following things properly installed on your computer.
   instance name.
 * update `config/environment.js` `ENV.rootURL` in the production environment
 * To use deploy create a file `.env.deploy.production` in the root of this project containing something like `db=https://username:password@martinic.cloudant.com/bloggr`
+
 
 ## Running
 
@@ -81,7 +90,7 @@ After that you can protect your `bloggr` database from unauthorized writes by ad
 }
 ```
 
-For Cloudant you have to create a `_users` database and insert the userdocument from above or use the Hoodie [CouchDB User Management App](http://gr2m.github.io/couchdb-user-management-app/) 
+For Cloudant you have to create a `_users` database and insert the userdocument from above or use the Hoodie [CouchDB User Management App](http://gr2m.github.io/couchdb-user-management-app/)
 
 ### Secret route
 
