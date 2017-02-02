@@ -17,34 +17,34 @@ export default Adapter.extend({
 
     let localDb = config.local_couch || 'blogger';
 
-	  assert('local_couch must be set', !isEmpty(localDb));
+    assert('local_couch must be set', !isEmpty(localDb));
 
-	  let db = new PouchDB(localDb);
-  	let self = this;
+    let db = new PouchDB(localDb);
+    let self = this;
 
     let remoteDb = new PouchDB(config.remote_couch, {ajax: {timeout: 20000}});
 
     let replicationOptions = {
-	    live: true,
-	    retry: true
-  	};
+      live: true,
+      retry: true
+    };
 
-	  db.replicate.from(remoteDb, replicationOptions).on('paused', function (err) {
+    db.replicate.from(remoteDb, replicationOptions).on('paused', function (err) {
       self.get('cloudState').setPull(!err);
     });
 
-	  db.replicate.to(remoteDb, replicationOptions).on('denied', (err) => {
-		  if (!err.id.startsWith('_design/')) {
-			  //there was an error pushing, probably logged out outside of this app (couch/cloudant dashboard)
-			  self.get('session').invalidate();//this cancels the replication
+    db.replicate.to(remoteDb, replicationOptions).on('denied', (err) => {
+      if (!err.id.startsWith('_design/')) {
+        //there was an error pushing, probably logged out outside of this app (couch/cloudant dashboard)
+        self.get('session').invalidate();//this cancels the replication
 
-		    throw({message: "Replication failed. Check login?"});//prevent doc from being marked replicated
-		  }
- 	  }).on('paused',(err) => {
+        throw({message: "Replication failed. Check login?"});//prevent doc from being marked replicated
+      }
+    }).on('paused',(err) => {
       self.get('cloudState').setPush(!err);
     }).on('error',() => {
-   		self.get('session').invalidate();//mark error by loggin out
- 	  });
+      self.get('session').invalidate();//mark error by loggin out
+    });
 
     this.set('remoteDb', remoteDb);
     this.set('db', db);

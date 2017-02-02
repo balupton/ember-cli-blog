@@ -3,12 +3,12 @@ import Ember from "ember";
 const { get, inject: {service} } = Ember;
 
 export default Ember.Controller.extend({
-	session: service(),
+  session: service(),
   cloudState: service(),
 
-	actions:{
+  actions:{
     logout: function() {
-    	get(this, 'session').invalidate();
+      get(this, 'session').invalidate();
     }
   }
 });

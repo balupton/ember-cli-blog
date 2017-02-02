@@ -14,17 +14,17 @@ export default Ember.Route.extend({
   },
 
   actions: {
-		createAuthor: function() {
+    createAuthor: function() {
       this.controllerFor('author').set('globals.isEditing', true);
       var newauthor = this.store.createRecord('author');
       this.transitionTo('author', newauthor.save());
     },
 
-		saveAuthor: function() {
-			this.modelFor('author').save();
-		},
+    saveAuthor: function() {
+      this.modelFor('author').save();
+    },
 
-		deleteAuthor: function() {
+    deleteAuthor: function() {
       this.modelFor('author').destroyRecord().then(function() {
         this.transitionTo('authors');
       }.bind(this));
