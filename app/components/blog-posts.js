@@ -23,6 +23,7 @@ export default Ember.Component.extend({
       { conjunction: 'and', sort: false}
     );
   }.property('arrangedContent.@each.title', 'arrangedContent.@each.authorName', 'query'),
+  // ^ http://emberjs.com/api/classes/Ember.ComputedProperty.html#method_property
 
   // `filteredContent` is then used by this to create the paged array
   // which is used by our view like so
