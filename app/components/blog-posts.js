@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import pagedArray from 'ember-cli-pagination/computed/paged-array';
-import computedFilterByQuery from 'ember-cli-filter-by-query/util/filter';
+import computedFilterByQuery from 'ember-cli-filter-by-query';
 
 // define the handling of the `templates/components/blog-posts.hbs` view, which is used by `posts.hbs` like so:
 // => {{#blog-posts posts=model page=page perPage=perPage query=query createAction="createPost"}}{{outlet}}{{/blog-posts}}
@@ -15,15 +15,12 @@ export default Ember.Component.extend({
   arrangedContent: Ember.computed.sort('posts', 'postsSorting'),
 
   // `arrangedContent` is then used by this filter to create `filteredContent`
-  filteredContent: function() {
-    return computedFilterByQuery(
-      this.get('arrangedContent'),
-      ['title', 'body', 'authorName', 'excerpt'],
-      this.get('query'),
-      { conjunction: 'and', sort: false}
-    );
-  }.property('arrangedContent.@each.title', 'arrangedContent.@each.authorName', 'query'),
-  // ^ http://emberjs.com/api/classes/Ember.ComputedProperty.html#method_property
+  filteredContent: computedFilterByQuery(
+    'arrangedContent',
+    ['title', 'body', 'authorName', 'excerpt'],
+    'query',
+    { conjunction: 'and', sort: false}
+  ),
 
   // `filteredContent` is then used by this to create the paged array
   // which is used by our view like so
