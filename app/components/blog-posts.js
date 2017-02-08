@@ -34,6 +34,9 @@ export default Ember.Component.extend({
   // define the actions, used by our view like so:
   // => <button {{action 'createPost'}}>Create</button>
   actions: {
+    resetPage: function() {
+      this.set('page', 1);
+    },
     createPost: function() {
       this.sendAction('createAction');
     }

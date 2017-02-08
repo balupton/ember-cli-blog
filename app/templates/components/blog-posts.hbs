@@ -2,7 +2,7 @@
 	<div class="row">
 	  <!-- blog post listing -->
 		<div class="col-xs-5">
-		  <button {{action 'createPost'}}>Create</button> {{input type="text" value=query placeholder="Filter Posts" autofocus="autofocus"}}
+		  <button {{action 'createPost'}}>Create</button> {{input type="text" value=query placeholder="Filter Posts" autofocus="autofocus" key-press="resetPage"}}
 			<table class='table'>
 				<thead>
 					<tr><th>Recent Posts</th></tr>
