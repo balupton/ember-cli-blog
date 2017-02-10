@@ -21,8 +21,8 @@ You will need the following things properly installed on your computer.
 To get up and running with this project:
 
 * `git clone` this repository and cd into it `cd ember-cli-blog`
-* `npm install` to install npm dependencies (will also install the needed bower dependencies via a `postinstall` hook)
-* `npm run start` to start the server!
+* `npm run setup` to install npm and bower dependencies
+* `npm start` to start the server!
 
 Data will be stored in an in memory database and if configured, also replicated to a CouchDB instance.
 
